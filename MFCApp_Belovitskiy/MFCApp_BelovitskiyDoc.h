@@ -4,7 +4,7 @@
 
 
 #pragma once
-
+#include "Town.h"
 
 class CMFCAppBelovitskiyDoc : public CDocument
 {
@@ -14,7 +14,7 @@ protected: // create from serialization only
 
 // Attributes
 public:
-
+	Town town;
 // Operations
 public:
 

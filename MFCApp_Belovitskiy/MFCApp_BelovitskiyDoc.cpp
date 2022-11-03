@@ -44,6 +44,7 @@ BOOL CMFCAppBelovitskiyDoc::OnNewDocument()
 		return FALSE;
 
 	// TODO: add reinitialization code here
+	town.clear_town();
 	// (SDI documents will reuse this document)
 
 	return TRUE;
@@ -59,10 +60,13 @@ void CMFCAppBelovitskiyDoc::Serialize(CArchive& ar)
 	if (ar.IsStoring())
 	{
 		// TODO: add storing code here
+		town.save_file(ar);
 	}
 	else
 	{
 		// TODO: add loading code here
+		town.clear_town();
+		town.load_file(ar);
 	}
 }
 
