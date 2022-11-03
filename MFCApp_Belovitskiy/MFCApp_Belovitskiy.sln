@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCApp_Belovitskiy", "MFCApp_Belovitskiy.vcxproj", "{4F1A7441-7C01-4C55-8B18-3004D22E5838}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Debug|x64.ActiveCfg = Debug|x64
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Debug|x64.Build.0 = Debug|x64
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Debug|x86.ActiveCfg = Debug|Win32
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Debug|x86.Build.0 = Debug|Win32
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Release|x64.ActiveCfg = Release|x64
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Release|x64.Build.0 = Release|x64
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Release|x86.ActiveCfg = Release|Win32
+		{4F1A7441-7C01-4C55-8B18-3004D22E5838}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E8AE863-9293-44B5-9D3A-C970BE8BB518}
+	EndGlobalSection
+EndGlobal
