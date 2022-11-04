@@ -47,7 +47,7 @@ BOOL CMFCAppBelovitskiyView::PreCreateWindow(CREATESTRUCT& cs)
 
 // CMFCAppBelovitskiyView drawing
 
-void CMFCAppBelovitskiyView::OnDraw(CDC* /*pDC*/)
+void CMFCAppBelovitskiyView::OnDraw(CDC* pDC)
 {
 	CMFCAppBelovitskiyDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -55,6 +55,14 @@ void CMFCAppBelovitskiyView::OnDraw(CDC* /*pDC*/)
 		return;
 
 	// TODO: add draw code for native data here
+	//CPen pen(PS_SOLID, 3, RGB(256, 112, 69));
+	//CPen* pOldpen = pDC->SelectObject(&pen);
+
+
+	CSize sizeTotal = pDoc->town.draw(pDC);
+	SetScrollSizes(MM_TEXT, sizeTotal);
+
+	//pDC->SelectObject(&pOldpen);
 }
 
 void CMFCAppBelovitskiyView::OnInitialUpdate()

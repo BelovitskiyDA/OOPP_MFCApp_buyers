@@ -18,6 +18,25 @@ void VipBuyer::print() const
 	std::cout << "points: " << points << std::endl;
 }
 
+
+void VipBuyer::draw(CDC* pDC, CSize& sz, int tabx)
+{
+	Buyer::draw(pDC, sz, tabx);
+
+	CString points_str = "points: " + str2cstr(std::to_string(points));
+
+	int max_x = sz.cx;
+	CSize size_element(0, 0);
+	
+	pDC->TextOutA(tabx, sz.cy, points_str);
+	size_element = pDC->GetOutputTextExtent(points_str);
+	sz.cy += size_element.cy;
+	if (max_x < size_element.cx)
+		sz.cx = size_element.cx;
+	
+}
+
+
 void VipBuyer::Serialize(CArchive& ar)
 {
 	Buyer::Serialize(ar);

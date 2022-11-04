@@ -4,8 +4,17 @@
 #include "Buyer.h"
 #include "VipBuyer.h"
 #include <atlstr.h>
+#include <vector>
+#include <algorithm>
+#include <functional>
 
-Town::Town() {}
+Town::Town() 
+{
+	index = 0;
+	name = "";
+	country = "";
+	utc = 0;
+}
 
 void Town::input()
 {
@@ -137,6 +146,51 @@ int Town::get_index() const
 std::string Town::get_name() const
 {
 	return name;
+}
+
+CSize Town::draw(CDC* pDC)
+{
+	int xstart = 0;
+	int tabx = 0;
+	int ystart = 0;
+	CSize sz(xstart, ystart);
+	std::vector<CString> vtext{"    Town","index: ","name: ","country: ","utc: "};
+
+	vtext[1] += str2cstr(std::to_string(index));
+	vtext[2] += str2cstr(name);
+	vtext[3] += str2cstr(country);
+	vtext[4] += str2cstr(std::to_string(utc));
+
+	int max_x = 0;
+	CSize size_element(0, 0);
+	for (auto text : vtext)
+	{
+		pDC->TextOutA(tabx, sz.cy, text);
+		size_element = pDC->GetOutputTextExtent(text);
+		sz.cy += size_element.cy;
+		if (max_x < size_element.cx)
+			sz.cx = size_element.cx;
+	}
+
+	std::for_each(buyers.begin(), buyers.end(), std::bind(&Buyer::draw, std::placeholders::_1, pDC,std::ref(sz),tabx));
+
+	/*
+	pDC->TextOutA(sz.cx,sz.cy,"Town\n");
+	sz += pDC->GetOutputTextExtent("Town\n");
+	pDC->TextOutA(xstart, sz.cy, "index");
+	sz += pDC->GetOutputTextExtent("index");
+	
+	std::cout << "Town" << std::endl
+		<< "index: " << index << std::endl
+		<< "name: " << name << std::endl
+		<< "country: " << country << std::endl
+		<< "utc: " << utc << std::endl;
+	for (const auto iter : buyers)
+	{
+		iter->print();
+	}
+	*/
+	return sz;
 }
 
 Town::~Town()

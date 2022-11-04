@@ -10,6 +10,7 @@ public:
 	void input();
 	void print() const;
 	void Serialize(CArchive& ar);
+	void draw(CDC* pDC, CSize& sz, int tabx);
 	~VipBuyer();
 };
 

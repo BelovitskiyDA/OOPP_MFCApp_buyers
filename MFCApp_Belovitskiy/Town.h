@@ -28,6 +28,7 @@ public:
 	void clear_town();
 	int get_index() const;
 	std::string get_name() const;
+	CSize draw(CDC* pDC);
 	~Town();
 };
 

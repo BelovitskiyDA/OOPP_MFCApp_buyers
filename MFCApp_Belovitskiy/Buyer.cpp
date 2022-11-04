@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Buyer.h"
 #include "utils.h"
+#include <vector>
 
 Buyer::Buyer() {}
 Buyer::~Buyer() {}
@@ -30,6 +31,28 @@ void Buyer::print() const
 		<< "address: " << address << std::endl
 		<< "age: " << age << std::endl
 		<< "phone number: " << phone_number << std::endl;
+}
+
+void Buyer::draw(CDC* pDC, CSize& sz, int tabx)
+{
+	std::vector<CString> vtext{ "    Buyer","name: ","surname: ","address: ","age: ","phone number: "};
+
+	vtext[1] += str2cstr(name);
+	vtext[2] += str2cstr(surname);
+	vtext[3] += str2cstr(address);
+	vtext[4] += str2cstr(std::to_string(age));
+	vtext[5] += str2cstr(std::to_string(phone_number));
+
+	int max_x = sz.cx;
+	CSize size_element(0, 0);
+	for (auto text : vtext)
+	{
+		pDC->TextOutA(tabx, sz.cy, text);
+		size_element = pDC->GetOutputTextExtent(text);
+		sz.cy += size_element.cy;
+		if (max_x < size_element.cx)
+			sz.cx = size_element.cx;
+	}
 }
 
 void Buyer::Serialize(CArchive& ar)

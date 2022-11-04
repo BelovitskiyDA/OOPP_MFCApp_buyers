@@ -17,6 +17,7 @@ public:
 	virtual void input();
 	virtual void print() const;
 	virtual void Serialize(CArchive& ar);
+	virtual void draw(CDC* pDC,CSize& sz,int tabx);
 	virtual ~Buyer();
 };
 
