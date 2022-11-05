@@ -271,3 +271,11 @@ void Town::delete_buyer()
 		std::cout << "no existing this buyer" << std::endl;
 	}
 }
+
+
+void Town::printList(CListBox& list)
+{
+	//for_each and lambda function
+	for_each(buyers.begin(), buyers.end(), [&list](auto p){list.AddString(str2cstr(p->get_surname() + " " + p->get_name()));});
+	list.SetCurSel(0);
+}

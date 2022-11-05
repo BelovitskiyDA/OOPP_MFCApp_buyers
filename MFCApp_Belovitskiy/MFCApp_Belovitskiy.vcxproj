@@ -185,6 +185,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Buyer.h" />
+    <ClInclude Include="CMyDialog.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MFCApp_Belovitskiy.h" />
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Buyer.cpp" />
+    <ClCompile Include="CMyDialog.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MFCApp_Belovitskiy.cpp" />
     <ClCompile Include="MFCApp_BelovitskiyDoc.cpp" />

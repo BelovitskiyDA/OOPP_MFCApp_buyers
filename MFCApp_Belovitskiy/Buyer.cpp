@@ -55,6 +55,16 @@ void Buyer::draw(CDC* pDC, CSize& sz, int tabx)
 	}
 }
 
+std::string Buyer::get_name()
+{
+	return name;
+}
+
+std::string Buyer::get_surname()
+{
+	return surname;
+}
+
 void Buyer::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())

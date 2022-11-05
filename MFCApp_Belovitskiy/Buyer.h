@@ -18,6 +18,8 @@ public:
 	virtual void print() const;
 	virtual void Serialize(CArchive& ar);
 	virtual void draw(CDC* pDC,CSize& sz,int tabx);
+	std::string get_name();
+	std::string get_surname();
 	virtual ~Buyer();
 };
 

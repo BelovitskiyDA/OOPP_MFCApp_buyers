@@ -11,7 +11,7 @@
 #endif
 
 #include "MFCApp_BelovitskiyDoc.h"
-
+#include "CMyDialog.h"
 #include <propkey.h>
 
 #ifdef _DEBUG
@@ -23,6 +23,7 @@
 IMPLEMENT_DYNCREATE(CMFCAppBelovitskiyDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CMFCAppBelovitskiyDoc, CDocument)
+	ON_COMMAND(ID_FILE_EDITINFO, &CMFCAppBelovitskiyDoc::OnFileEditinfo)
 END_MESSAGE_MAP()
 
 
@@ -140,3 +141,15 @@ void CMFCAppBelovitskiyDoc::Dump(CDumpContext& dc) const
 
 
 // CMFCAppBelovitskiyDoc commands
+
+
+void CMFCAppBelovitskiyDoc::OnFileEditinfo()
+{
+	// TODO: Add your command handler code here
+	CMyDialog dlg(this);
+
+	if (dlg.DoModal() == IDOK)
+	{
+		UpdateAllViews(NULL);
+	}
+}

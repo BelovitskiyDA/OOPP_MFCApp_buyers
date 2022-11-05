@@ -51,6 +51,9 @@
     <ClInclude Include="VipBuyer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CMyDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApp_Belovitskiy.cpp">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VipBuyer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

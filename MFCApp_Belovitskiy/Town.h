@@ -29,6 +29,7 @@ public:
 	int get_index() const;
 	std::string get_name() const;
 	CSize draw(CDC* pDC);
+	void printList(CListBox& list);
 	~Town();
 };
 
