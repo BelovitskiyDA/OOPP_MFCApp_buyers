@@ -23,6 +23,7 @@ public:
 	void save_buyer();
 	void load_buyer();
 	void delete_buyer();
+	void delete_buyer(int n);
 	void load_file(CArchive& ar);
 	void save_file(CArchive& ar);
 	void clear_town();

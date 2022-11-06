@@ -41,6 +41,7 @@ void CMyDialog::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CMyDialog, CDialogEx)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CMyDialog::OnLbnSelchangeList1)
+	ON_BN_CLICKED(IDC_BUTTON_DELETE, &CMyDialog::OnBnClickedButtonDelete)
 END_MESSAGE_MAP()
 
 
@@ -75,8 +76,6 @@ void CMyDialog::DoChange(int n)
 	edit_name.SetWindowTextA(str2cstr(p->get_name()));
 	edit_surename.SetWindowTextA(str2cstr(p->get_surname()));
 	edit_address.SetWindowTextA(str2cstr(p->get_address()));
-	//CString c_str;
-	//c_str = c_str.Format(L"%d", p->get_age());
 	edit_age.SetWindowTextA(str2cstr(std::to_string(p->get_age())));
 	edit_phone.SetWindowTextA(str2cstr(std::to_string(p->get_phone_number())));
 	auto pp = dynamic_cast<VipBuyer*>(p.get());
@@ -94,4 +93,28 @@ void CMyDialog::DoChange(int n)
 	
 	UpdateData(FALSE);
 
+}
+
+void CMyDialog::OnBnClickedButtonDelete()
+{
+	// TODO: Add your control notification handler code here
+	int nmax = list.GetCount();
+	int n = list.GetCurSel();
+	if (n < 0)
+		return;
+
+	pDoc->town.delete_buyer(n);
+
+	list.DeleteString(n);
+	if (nmax != 1 && nmax == n)
+	{
+		list.SetCurSel(n-1);
+	}
+	else if (nmax != 1 && nmax != n)
+	{
+		list.SetCurSel(n);
+	}
+	
+	
+	OnLbnSelchangeList1();
 }

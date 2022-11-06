@@ -150,7 +150,7 @@ std::string Town::get_name() const
 
 std::shared_ptr<Buyer> Town::get_n(int n)
 {
-	if (n > buyers.size())
+	if (n+1 > buyers.size())
 	{
 		return *buyers.begin();
 	}
@@ -282,6 +282,18 @@ void Town::delete_buyer()
 	else
 	{
 		std::cout << "no existing this buyer" << std::endl;
+	}
+}
+
+void Town::delete_buyer(int n)
+{
+	if (n+1 > buyers.size())
+	{
+		return;
+	}
+	else
+	{
+		buyers.erase(buyers.begin() + n);
 	}
 }
 

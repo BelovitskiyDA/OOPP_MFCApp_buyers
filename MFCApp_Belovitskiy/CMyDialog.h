@@ -34,4 +34,5 @@ public:
 	afx_msg void OnLbnSelchangeList1();
 	void DoChange(int n);
 	CStatic statictext_points;
+	afx_msg void OnBnClickedButtonDelete();
 };
