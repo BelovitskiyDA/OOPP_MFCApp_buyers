@@ -6,6 +6,9 @@
 #include "CMyDialog.h"
 #include "afxdialogex.h"
 #include "MFCApp_BelovitskiyDoc.h"
+#include "utils.h"
+#include "VipBuyer.h"
+#include <stdio.h>
 
 
 // CMyDialog dialog
@@ -32,10 +35,12 @@ void CMyDialog::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDIT_AGE, edit_age);
 	DDX_Control(pDX, IDC_EDIT_PHONE, edit_phone);
 	DDX_Control(pDX, IDC_EDIT_POINTS, edit_points);
+	DDX_Control(pDX, IDC_STATIC_POINTS, statictext_points);
 }
 
 
 BEGIN_MESSAGE_MAP(CMyDialog, CDialogEx)
+	ON_LBN_SELCHANGE(IDC_LIST1, &CMyDialog::OnLbnSelchangeList1)
 END_MESSAGE_MAP()
 
 
@@ -48,8 +53,45 @@ BOOL CMyDialog::OnInitDialog()
 
 	// TODO:  Add extra initialization here
 	pDoc->town.printList(list);
-
+	OnLbnSelchangeList1();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+
+void CMyDialog::OnLbnSelchangeList1()
+{
+	// TODO: Add your control notification handler code here
+	int n = list.GetCurSel();
+	if (n < 0)
+		return;
+	DoChange(n);
+}
+
+void CMyDialog::DoChange(int n)
+{
+	auto p = pDoc->town.get_n(n);
+	edit_name.SetWindowTextA(str2cstr(p->get_name()));
+	edit_surename.SetWindowTextA(str2cstr(p->get_surname()));
+	edit_address.SetWindowTextA(str2cstr(p->get_address()));
+	//CString c_str;
+	//c_str = c_str.Format(L"%d", p->get_age());
+	edit_age.SetWindowTextA(str2cstr(std::to_string(p->get_age())));
+	edit_phone.SetWindowTextA(str2cstr(std::to_string(p->get_phone_number())));
+	auto pp = dynamic_cast<VipBuyer*>(p.get());
+	if (pp)
+	{
+		edit_points.ShowWindow(SW_SHOW);
+		statictext_points.ShowWindow(SW_SHOW);
+		edit_points.SetWindowTextA(str2cstr(std::to_string(pp->get_points())));
+	}
+	else
+	{
+		edit_points.ShowWindow(SW_HIDE);
+		statictext_points.ShowWindow(SW_HIDE);
+	}
+	
+	UpdateData(FALSE);
+
 }

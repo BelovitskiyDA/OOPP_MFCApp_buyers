@@ -20,6 +20,9 @@ public:
 	virtual void draw(CDC* pDC,CSize& sz,int tabx);
 	std::string get_name();
 	std::string get_surname();
+	std::string get_address();
+	int get_age();
+	long long get_phone_number();
 	virtual ~Buyer();
 };
 

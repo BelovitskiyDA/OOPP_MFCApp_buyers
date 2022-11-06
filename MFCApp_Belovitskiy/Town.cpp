@@ -148,6 +148,19 @@ std::string Town::get_name() const
 	return name;
 }
 
+std::shared_ptr<Buyer> Town::get_n(int n)
+{
+	if (n > buyers.size())
+	{
+		return *buyers.begin();
+	}
+	else
+	{
+		auto p = buyers[n];
+		return p;
+	}
+}
+
 CSize Town::draw(CDC* pDC)
 {
 	int xstart = 0;

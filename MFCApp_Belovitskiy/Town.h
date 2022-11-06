@@ -4,8 +4,8 @@
 #include <fstream>
 #include <vector>
 #include <memory>
-
-class Buyer;
+#include "Buyer.h"
+//class Buyer;
 
 class Town: public CObject
 {
@@ -28,6 +28,7 @@ public:
 	void clear_town();
 	int get_index() const;
 	std::string get_name() const;
+	std::shared_ptr<Buyer> get_n(int n);
 	CSize draw(CDC* pDC);
 	void printList(CListBox& list);
 	~Town();

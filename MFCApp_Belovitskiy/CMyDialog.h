@@ -31,4 +31,7 @@ public:
 	CEdit edit_phone;
 	CEdit edit_points;
 	virtual BOOL OnInitDialog();
+	afx_msg void OnLbnSelchangeList1();
+	void DoChange(int n);
+	CStatic statictext_points;
 };

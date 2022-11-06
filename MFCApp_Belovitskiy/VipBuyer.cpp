@@ -36,6 +36,11 @@ void VipBuyer::draw(CDC* pDC, CSize& sz, int tabx)
 	
 }
 
+int VipBuyer::get_points()
+{
+	return points;
+}
+
 
 void VipBuyer::Serialize(CArchive& ar)
 {

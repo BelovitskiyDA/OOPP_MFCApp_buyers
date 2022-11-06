@@ -11,6 +11,7 @@ public:
 	void print() const;
 	void Serialize(CArchive& ar);
 	void draw(CDC* pDC, CSize& sz, int tabx);
+	int get_points();
 	~VipBuyer();
 };
 

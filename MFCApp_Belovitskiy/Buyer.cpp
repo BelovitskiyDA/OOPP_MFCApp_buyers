@@ -65,6 +65,21 @@ std::string Buyer::get_surname()
 	return surname;
 }
 
+std::string Buyer::get_address()
+{
+	return address;
+}
+
+int Buyer::get_age()
+{
+	return age;
+}
+
+long long Buyer::get_phone_number()
+{
+	return phone_number;
+}
+
 void Buyer::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
