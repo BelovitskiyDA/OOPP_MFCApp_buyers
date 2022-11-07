@@ -147,9 +147,6 @@ void CMFCAppBelovitskiyDoc::OnFileEditinfo()
 {
 	// TODO: Add your command handler code here
 	CMyDialog dlg(this);
-
-	if (dlg.DoModal() == IDOK)
-	{
-		UpdateAllViews(NULL);
-	}
+	dlg.DoModal();
+	UpdateAllViews(NULL);
 }

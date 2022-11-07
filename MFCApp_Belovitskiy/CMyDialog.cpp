@@ -10,6 +10,7 @@
 #include "VipBuyer.h"
 #include <stdio.h>
 #include "CMyDialogEditBuyer.h"
+#include "CMyDialogAddBuyer.h"
 
 
 // CMyDialog dialog
@@ -44,6 +45,7 @@ BEGIN_MESSAGE_MAP(CMyDialog, CDialogEx)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CMyDialog::OnLbnSelchangeList1)
 	ON_BN_CLICKED(IDC_BUTTON_DELETE, &CMyDialog::OnBnClickedButtonDelete)
 	ON_BN_CLICKED(IDC_BUTTON_EDIT, &CMyDialog::OnBnClickedButtonEdit)
+	ON_BN_CLICKED(IDC_BUTTON_ADD, &CMyDialog::OnBnClickedButtonAdd)
 END_MESSAGE_MAP()
 
 
@@ -108,11 +110,11 @@ void CMyDialog::OnBnClickedButtonDelete()
 	pDoc->town.delete_buyer(n);
 
 	list.DeleteString(n);
-	if (nmax != 1 && nmax == n)
+	if (nmax != 1 && nmax == n+1)
 	{
 		list.SetCurSel(n-1);
 	}
-	else if (nmax != 1 && nmax != n)
+	else if (nmax != 1 && nmax != n+1)
 	{
 		list.SetCurSel(n);
 	}
@@ -129,6 +131,23 @@ void CMyDialog::OnBnClickedButtonEdit()
 
 	if (dlg.DoModal() == IDOK)
 	{
+		OnLbnSelchangeList1();
+		//
+	}
+}
+
+
+void CMyDialog::OnBnClickedButtonAdd()
+{
+	// TODO: Add your control notification handler code here
+	CMyDialogAddBuyer dlg(this->pDoc);
+
+	if (dlg.DoModal() == IDOK)
+	{
+		list.ResetContent();
+		pDoc->town.printList(list);
+		int nmax = list.GetCount();
+		list.SetCurSel(nmax-1);
 		OnLbnSelchangeList1();
 		//
 	}

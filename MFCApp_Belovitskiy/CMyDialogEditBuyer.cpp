@@ -97,6 +97,5 @@ void CMyDialogEditBuyer::OnBnClickedOk()
 		pp->set_points(std::stoi(cstr2str(buf)));
 	}
 	
-
 	CDialogEx::OnOK();
 }

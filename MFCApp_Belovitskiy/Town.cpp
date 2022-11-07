@@ -50,10 +50,20 @@ void Town::add_buyer()
 	buyers.push_back(new_buyer);
 }
 
+void Town::add_buyer(std::shared_ptr<Buyer> new_buyer)
+{
+	buyers.push_back(new_buyer);
+}
+
 void Town::add_vip_buyer()
 {
 	auto new_buyer = std::make_shared<VipBuyer>();
 	new_buyer->input();
+	buyers.push_back(new_buyer);
+}
+
+void Town::add_vip_buyer(std::shared_ptr<VipBuyer> new_buyer)
+{
 	buyers.push_back(new_buyer);
 }
 

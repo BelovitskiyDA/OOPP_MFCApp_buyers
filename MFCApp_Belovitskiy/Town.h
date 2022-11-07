@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include "Buyer.h"
+#include "VipBuyer.h"
 //class Buyer;
 
 class Town: public CObject
@@ -18,7 +19,9 @@ public:
 	void input();
 	void print() const;
 	void add_buyer();
+	void add_buyer(std::shared_ptr<Buyer>);
 	void add_vip_buyer();
+	void add_vip_buyer(std::shared_ptr<VipBuyer>);
 	auto choose_buyer();
 	void save_buyer();
 	void load_buyer();

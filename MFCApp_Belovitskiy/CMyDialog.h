@@ -36,4 +36,5 @@ public:
 	CStatic statictext_points;
 	afx_msg void OnBnClickedButtonDelete();
 	afx_msg void OnBnClickedButtonEdit();
+	afx_msg void OnBnClickedButtonAdd();
 };
