@@ -23,6 +23,11 @@ public:
 	std::string get_address();
 	int get_age();
 	long long get_phone_number();
+	void set_name(std::string);
+	void set_surname(std::string);
+	void set_address(std::string);
+	void set_age(int);
+	void set_phone_number(long long);
 	virtual ~Buyer();
 };
 

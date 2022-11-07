@@ -80,6 +80,32 @@ long long Buyer::get_phone_number()
 	return phone_number;
 }
 
+void Buyer::set_name(std::string text)
+{
+	name = text;
+}
+
+void Buyer::set_surname(std::string text)
+{
+	surname = text;
+}
+
+void Buyer::set_address(std::string text)
+{
+	address = text;
+}
+
+void Buyer::set_age(int number)
+{
+	age = number;
+}
+
+void Buyer::set_phone_number(long long number)
+{
+	phone_number = number;
+}
+
+
 void Buyer::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())

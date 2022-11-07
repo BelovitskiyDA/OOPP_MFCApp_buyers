@@ -41,6 +41,10 @@ int VipBuyer::get_points()
 	return points;
 }
 
+void VipBuyer::set_points(int number)
+{
+	points = number;
+}
 
 void VipBuyer::Serialize(CArchive& ar)
 {

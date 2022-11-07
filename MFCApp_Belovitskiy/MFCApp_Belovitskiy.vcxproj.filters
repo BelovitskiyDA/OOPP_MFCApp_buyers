@@ -54,6 +54,9 @@
     <ClInclude Include="CMyDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CMyDialogEditBuyer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCApp_Belovitskiy.cpp">
@@ -84,6 +87,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CMyDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMyDialogEditBuyer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

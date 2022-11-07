@@ -6,6 +6,7 @@
 #define IDR_MAINFRAME                   128
 #define IDR_MFCAppBelovitskiyTYPE       130
 #define IDD_DIALOG1                     310
+#define IDD_DIALOG_EDIT_BUYER           312
 #define IDC_LIST1                       1000
 #define IDC_EDIT_NAME                   1001
 #define IDC_EDIT_SURENAME               1002
@@ -23,7 +24,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        312
+#define _APS_NEXT_RESOURCE_VALUE        314
 #define _APS_NEXT_COMMAND_VALUE         32774
 #define _APS_NEXT_CONTROL_VALUE         1011
 #define _APS_NEXT_SYMED_VALUE           310

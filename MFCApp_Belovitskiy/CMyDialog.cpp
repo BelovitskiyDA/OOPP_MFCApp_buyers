@@ -9,6 +9,7 @@
 #include "utils.h"
 #include "VipBuyer.h"
 #include <stdio.h>
+#include "CMyDialogEditBuyer.h"
 
 
 // CMyDialog dialog
@@ -42,6 +43,7 @@ void CMyDialog::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CMyDialog, CDialogEx)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CMyDialog::OnLbnSelchangeList1)
 	ON_BN_CLICKED(IDC_BUTTON_DELETE, &CMyDialog::OnBnClickedButtonDelete)
+	ON_BN_CLICKED(IDC_BUTTON_EDIT, &CMyDialog::OnBnClickedButtonEdit)
 END_MESSAGE_MAP()
 
 
@@ -115,6 +117,19 @@ void CMyDialog::OnBnClickedButtonDelete()
 		list.SetCurSel(n);
 	}
 	
-	
 	OnLbnSelchangeList1();
+}
+
+
+void CMyDialog::OnBnClickedButtonEdit()
+{
+	// TODO: Add your control notification handler code here
+	int n = list.GetCurSel();
+	CMyDialogEditBuyer dlg(this->pDoc, n);
+
+	if (dlg.DoModal() == IDOK)
+	{
+		OnLbnSelchangeList1();
+		//
+	}
 }
