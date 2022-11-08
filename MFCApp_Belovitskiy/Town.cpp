@@ -158,6 +158,34 @@ std::string Town::get_name() const
 	return name;
 }
 
+std::string Town::get_country()
+{
+	return country;
+}
+
+int Town::get_utc()
+{
+	return utc;
+}
+
+void Town::set_name(std::string text)
+{
+	name = text;
+}
+
+void Town::set_country(std::string text)
+{
+	country = text;
+}
+void Town::set_index(int number)
+{
+	index = number;
+}
+void Town::set_utc(int number)
+{
+	utc = number;
+}
+
 std::shared_ptr<Buyer> Town::get_n(int n)
 {
 	if (n+1 > buyers.size())

@@ -13,6 +13,7 @@
 #include "MFCApp_BelovitskiyDoc.h"
 #include "CMyDialog.h"
 #include <propkey.h>
+#include "CMyDialogEditTown.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -24,6 +25,7 @@ IMPLEMENT_DYNCREATE(CMFCAppBelovitskiyDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CMFCAppBelovitskiyDoc, CDocument)
 	ON_COMMAND(ID_FILE_EDITINFO, &CMFCAppBelovitskiyDoc::OnFileEditinfo)
+	ON_COMMAND(ID_FILE_EDITTOWN, &CMFCAppBelovitskiyDoc::OnFileEdittown)
 END_MESSAGE_MAP()
 
 
@@ -149,4 +151,15 @@ void CMFCAppBelovitskiyDoc::OnFileEditinfo()
 	CMyDialog dlg(this);
 	dlg.DoModal();
 	UpdateAllViews(NULL);
+}
+
+
+void CMFCAppBelovitskiyDoc::OnFileEdittown()
+{
+	// TODO: Add your command handler code here
+	CMyDialogEditTown dlg(this);
+	if (dlg.DoModal() == IDOK)
+	{
+		UpdateAllViews(NULL);
+	}
 }

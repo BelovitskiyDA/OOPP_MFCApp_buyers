@@ -188,6 +188,7 @@
     <ClInclude Include="CMyDialog.h" />
     <ClInclude Include="CMyDialogAddBuyer.h" />
     <ClInclude Include="CMyDialogEditBuyer.h" />
+    <ClInclude Include="CMyDialogEditTown.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MFCApp_Belovitskiy.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="CMyDialog.cpp" />
     <ClCompile Include="CMyDialogAddBuyer.cpp" />
     <ClCompile Include="CMyDialogEditBuyer.cpp" />
+    <ClCompile Include="CMyDialogEditTown.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MFCApp_Belovitskiy.cpp" />
     <ClCompile Include="MFCApp_BelovitskiyDoc.cpp" />

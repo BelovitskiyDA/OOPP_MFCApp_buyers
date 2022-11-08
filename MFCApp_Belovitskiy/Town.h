@@ -32,6 +32,14 @@ public:
 	void clear_town();
 	int get_index() const;
 	std::string get_name() const;
+
+	std::string get_country();
+	int get_utc();
+	void set_name(std::string);
+	void set_country(std::string);
+	void set_index(int);
+	void set_utc(int);
+
 	std::shared_ptr<Buyer> get_n(int n);
 	CSize draw(CDC* pDC);
 	void printList(CListBox& list);
